@@ -1,7 +1,10 @@
 <template>
   <div class="todos d-flex flex-column mt-3 mb-3">
+    <div class="text-center" v-if="todos.loading">
+      <div class="spinner-grow text-primary"></div>
+    </div>
     <div
-      v-for="todo in todos"
+      v-for="todo in todos.todoList"
       :key="todo.text"
       class="todo-item d-flex flex-row align-items-center"
       :class="{ bgDone: todo.completed }"

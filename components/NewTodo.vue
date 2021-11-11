@@ -4,7 +4,7 @@
       @keyup.enter="addTodo"
       type="text"
       class="form-control input"
-      placeholder="Todo..."
+      placeholder="Add new todo..."
     />
   </div>
 </template>

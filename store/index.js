@@ -1,7 +1,10 @@
 import axios from "axios";
 
 export const state = () => ({
-  todos: [],
+  todos: {
+    loading: true,
+    todoList: [],
+  },
 });
 
 export const actions = {
@@ -16,11 +19,11 @@ export const actions = {
 
 export const mutations = {
   GET_ALL(state, todos) {
-    console.log(todos);
-    state.todos = todos;
+    state.todos.loading = false;
+    state.todos.todoList = todos;
   },
   addTodo(state, text) {
-    state.todos.unshift({
+    state.todos.todoList.unshift({
       title: text,
       completed: false,
     });
